@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-// Passenger class to represent each passenger
 class Passenger {
     private String name;
     private String passportNumber;
@@ -11,7 +10,7 @@ class Passenger {
     public Passenger(String name, String passportNumber) {
         this.name = name;
         this.passportNumber = passportNumber;
-        this.seatNumber = null; // Initially no seat assigned
+        this.seatNumber = null;
     }
 
     public String getName() {
@@ -31,7 +30,7 @@ class Passenger {
     }
 }
 
-// Flight class to represent each flight
+
 class Flight {
     private String flightNumber;
     private String departureCity;
@@ -120,7 +119,6 @@ class Airline {
         }
     }
 
-    // Book a ticket on a specific flight
     public void bookTicket(String flightNumber, String passengerName, String passportNumber) {
         Flight flight = flights.get(flightNumber);
         if (flight != null) {
@@ -131,7 +129,6 @@ class Airline {
         }
     }
 
-    // Display passenger details for a specific flight
     public void displayPassengers(String flightNumber) {
         Flight flight = flights.get(flightNumber);
         if (flight != null) {
@@ -147,7 +144,6 @@ class Airline {
     }
 }
 
-// Main class to run the Airline Management System
 public class AirlineManagementSystem {
     public static void main(String[] args) {
         Airline airline = new Airline();
@@ -162,7 +158,7 @@ public class AirlineManagementSystem {
             System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline character
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:
@@ -174,7 +170,7 @@ public class AirlineManagementSystem {
                     String arrivalCity = scanner.nextLine();
                     System.out.print("Enter Capacity: ");
                     int capacity = scanner.nextInt();
-                    scanner.nextLine(); // Consume newline character
+                    scanner.nextLine(); 
                     airline.addFlight(flightNumber, departureCity, arrivalCity, capacity);
                     break;
                 case 2:
